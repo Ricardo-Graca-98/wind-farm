@@ -11,6 +11,7 @@ use App\Models\Inspection;
 use App\Models\ComponentType;
 use Illuminate\Database\Seeder;
 use Database\Factories\FarmFactory;
+use Database\Factories\TurbineFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Farm::factory(20)->create();
+        // Farm::factory(20)->create();
+        Turbine::factory(10)->create();
     }
 }
