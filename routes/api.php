@@ -18,3 +18,7 @@ use App\Http\Controllers\Farm\FarmTurbineController;
 
 Route::resource('farms', FarmController::class)->only(['index', 'show']);
 Route::resource('farms.turbines', FarmTurbineController::class)->only(['index', 'show']);
+
+Route::resource('turbines', TurbineController::class)->only(['index', 'show']);
+Route::resource('turbines.components', TurbineComponentController::class)->only(['index', 'show']);
+Route::resource('turbines.inspections', TurbineInspectionController::class)->only(['index', 'show']);
