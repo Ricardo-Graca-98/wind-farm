@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Farm\FarmController;
+use App\Http\Controllers\Farm\FarmTurbineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,4 @@ use App\Http\Controllers\Farm\FarmController;
 */
 
 Route::resource('farms', FarmController::class)->only(['index', 'show']);
+Route::resource('farms.turbines', FarmTurbineController::class)->only(['index', 'show']);
