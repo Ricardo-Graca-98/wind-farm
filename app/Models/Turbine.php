@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Farm;
+use App\Models\Component;
 use App\Models\Inspection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -33,5 +34,10 @@ class Turbine extends Model
     public function inspections(): HasMany
     {
         return $this->hasMany(Inspection::class);
+    }
+
+    public function components(): HasMany
+    {
+        return $this->hasMany(Component::class);
     }
 }
