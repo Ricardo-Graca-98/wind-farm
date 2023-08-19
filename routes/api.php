@@ -30,3 +30,6 @@ Route::resource('turbines.inspections', TurbineInspectionController::class)->onl
 
 Route::resource('components', ComponentController::class)->only(['index', 'show']);
 Route::resource('components.grades', ComponentGradeController::class)->only(['index', 'show']);
+
+Route::resource('inspections', InspectionController::class)->only(['index', 'show']);
+Route::resource('inspections.grades', InspectionGradeController::class)->only(['index', 'show']);
