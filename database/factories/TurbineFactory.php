@@ -19,7 +19,7 @@ class TurbineFactory extends Factory
     {
         return [
             'name' => fake()->sentence(1, true),
-            'farm_id' => Farm::factory(1)->create()->first()->id,
+            'farm_id' => Farm::factory(),
             'lat' => fake()->latitude(),
             'lng' => fake()->longitude()
         ];
