@@ -29,6 +29,5 @@ class InspectionController extends Controller
     public function show(Inspection $inspection)
     {
         return new InspectionResource($inspection);
-        
     }
 }

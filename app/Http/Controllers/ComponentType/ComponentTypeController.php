@@ -29,6 +29,5 @@ class ComponentTypeController extends Controller
     public function show(ComponentType $componentType)
     {
         return new ComponentTypeResource($componentType);
-        
     }
 }
