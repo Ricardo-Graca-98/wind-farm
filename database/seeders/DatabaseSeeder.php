@@ -25,6 +25,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // TODO: Refactor into different seeder files
+
+        $gradeTypes = GradeType::factory(5)
+            ->state(new Sequence(
+                ['name' => '1'],
+                ['name' => '2'],
+                ['name' => '3'],
+                ['name' => '4'],
+                ['name' => '5']
+            ))
+            ->create();
+
         $componentTypes = ComponentType::factory(4)
             ->state(new Sequence(
                 ['name' => 'Blade'],
@@ -34,8 +46,7 @@ class DatabaseSeeder extends Seeder
             ))
             ->create();
 
-        Farm::factory()
-            ->count(5)
+        Farm::factory(5)
             ->has(
                 Turbine::factory(2)
                     ->state(function (array $attributes, Farm $farm) {
@@ -52,5 +63,19 @@ class DatabaseSeeder extends Seeder
                     ->hasInspections(5)
             )
             ->create();
+
+        Component::all()->each(function ($component) use ($gradeTypes) {
+            $component->turbine->inspections->each(function ($inspection) use ($component, $gradeTypes) {
+                $gradeTypeId = $gradeTypes->random()->id;
+                
+                $inspection->grades()->save(
+                    Grade::factory()->create([
+                        'inspection_id' => $inspection->id,
+                        'component_id' => $component->id,
+                        'grade_type_id' => $gradeTypeId,
+                    ])
+                    );
+            });
+        });
     }
 }
