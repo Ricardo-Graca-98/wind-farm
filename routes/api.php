@@ -35,3 +35,5 @@ Route::resource('inspections', InspectionController::class)->only(['index', 'sho
 Route::resource('inspections.grades', InspectionGradeController::class)->only(['index', 'show']);
 
 Route::resource('grades', GradeController::class)->only(['index', 'show']);
+
+Route::resource('component-types', ComponentTypeController::class)->only(['index', 'show']);
