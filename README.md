@@ -74,4 +74,4 @@ composer install --ignore-platform-reqs
   - Sail creates a docker volume which is persistent, so stopping/starting sail will not affect/fix issues in a volume (missing DB etc)
 
 ## Your Notes
-This is a place for you to add your notes, plans, thinking and any feedback you have for us of the task, please feel free to include whatever you like here, we'll make sure to read it. 
+- Tried to use Sanctum to authenticate the SPA app but unfortunately I kept getting issues with the 'auth' middleware not existing, I believe this is due to not having an Authenticable model in the app.
