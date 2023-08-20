@@ -19,7 +19,7 @@ class InspectionFactory extends Factory
     {
         return [
             'turbine_id' => Turbine::factory(),
-            'inspected_at' => fake()->dateTime(),
+            'inspected_at' => $this->faker->dateTime(),
         ];
     }
 }

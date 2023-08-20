@@ -17,7 +17,7 @@ class FarmFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->sentence(1, true)
+            'name' => $this->faker->sentence(1, true)
         ];
     }
 }

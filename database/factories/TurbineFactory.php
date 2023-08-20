@@ -18,10 +18,10 @@ class TurbineFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->sentence(1, true),
+            'name' => $this->faker->sentence(1, true),
             'farm_id' => Farm::factory(),
-            'lat' => fake()->latitude(),
-            'lng' => fake()->longitude()
+            'lat' => $this->faker->latitude(),
+            'lng' => $this->faker->longitude()
         ];
     }
 }

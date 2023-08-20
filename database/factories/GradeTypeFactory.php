@@ -17,7 +17,7 @@ class GradeTypeFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->unique()->numberBetween(1, 5),
+            'name' => $this->faker->unique()->numberBetween(1, 5),
         ];
     }
 }
