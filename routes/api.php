@@ -26,6 +26,8 @@ use App\Http\Controllers\ComponentType\ComponentTypeController;
 |
 */
 
+// Wrap up all these routes under sanctum middleware protection for authenticated requests from the frontend.
+// Route::middleware('auth:sanctum')->group(function () {
 Route::resource('farms', FarmController::class)->only(['index', 'show']);
 Route::resource('farms.turbines', FarmTurbineController::class)->only(['index', 'show']);
 
@@ -44,3 +46,4 @@ Route::resource('grades', GradeController::class)->only(['index', 'show']);
 Route::resource('component-types', ComponentTypeController::class)->only(['index', 'show']);
 
 Route::resource('grade-types', GradeTypeController::class)->only(['index', 'show']);
+// });

@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
 
+// Enable use of credentials by every axios request
+axios.defaults.withCredentials = true;
+
 const useGradeTypeService = () => {
 
     const [gradeType, setGradeType] = useState([]);
